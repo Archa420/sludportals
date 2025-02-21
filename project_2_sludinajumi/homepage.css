@@ -1,0 +1,49 @@
+
+*{
+
+    top: 0; left: 30px; right: 0;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header{
+    position: fixed;
+    padding: 0px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+
+  }
+  header  .Name{
+    font-weight: bolder;
+    font-size: 35px;
+    color: black;
+  }
+
+  header  .navbar ul{
+    list-style: none;
+  }
+  header  .navbar ul li{
+    position: relative;
+    float: left;
+    
+  }
+  header  .navbar ul li a{
+    font-size: 25px;
+    padding: 20px;
+    color: black;
+    display: block;
+  }
+
+  header  .navbar ul li a:hover{
+    background: gray;
+
+  }
