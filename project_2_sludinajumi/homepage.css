@@ -1,7 +1,7 @@
 
 *{
 
-    top: 0; left: 30px; right: 0;
+    
     text-transform: capitalize;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +15,8 @@
   
   header{
     position: fixed;
-    padding: 0px 8%;
+    top: 0; left: 30px; right: 0;
+    padding: 0px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,4 +47,19 @@
   header  .navbar ul li a:hover{
     background: gray;
 
+  }
+  header  .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 180px;
+    background: beige;
+    display: none;
+  }
+  header  .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px;
+  }
+  header  .navbar ul li:hover > ul{
+    display: initial;
+    
   }
