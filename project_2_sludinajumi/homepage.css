@@ -6,6 +6,10 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+  background-image: url(https://media.canva.com/v2/files/uri:ifs%3A%2F%2FM%2Fa4b8b55f-293b-4f5b-b340-1c7b7a0cd4b8?csig=AAAAAAAAAAAAAAAAAAAAAMXWTlo03dxsK1Pv9FGHEENis3X_N2IqIWuOL4WLdpsd&exp=1740248257&signer=media-rpc&token=AAIAAU0AJGE0YjhiNTVmLTI5M2ItNGY1Yi1iMzQwLTFjN2I3YTBjZDRiOAAAAAABlS7hEeiwAHd5G8hR_Ta7ETnLXPiwdowXKgZ1fkaVmbP1UdByHA);
+  background-blend-mode: darken;
+}
  
   ul {
     list-style-type: none;
@@ -15,12 +19,13 @@
   
   header{
     position: fixed;
-    top: 0; left: 30px; right: 0;
+    top: 0; left: 0px; right: 0;
     padding: 0px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    background: white;
 
   }
   header  .Name{
@@ -52,8 +57,9 @@
     position: absolute;
     left: 0;
     width: 180px;
-    background: beige;
+    background: rgb(255, 255, 255);
     display: none;
+    box-shadow: 1px black;
   }
   header  .navbar ul li ul li{
     width: 100%;
@@ -61,5 +67,5 @@
   }
   header  .navbar ul li:hover > ul{
     display: initial;
-    
+
   }
