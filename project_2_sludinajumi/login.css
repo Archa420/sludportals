@@ -1,13 +1,6 @@
-* {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
-    font-family: sans-serif;
-
-}
 
 body{
-    background: url('https://coolbackgrounds.io/images/backgrounds/index/disco-dba865f1.png') no-repeat;
+    background: url('https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?cs=srgb&dl=pexels-mikebirdy-120049.jpg&fm=jpg') no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;   

@@ -1,12 +1,10 @@
 
 *{
-
-    
     text-transform: capitalize;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
+body {
   background-image: url(https://media.canva.com/v2/files/uri:ifs%3A%2F%2FM%2Fa4b8b55f-293b-4f5b-b340-1c7b7a0cd4b8?csig=AAAAAAAAAAAAAAAAAAAAAMXWTlo03dxsK1Pv9FGHEENis3X_N2IqIWuOL4WLdpsd&exp=1740248257&signer=media-rpc&token=AAIAAU0AJGE0YjhiNTVmLTI5M2ItNGY1Yi1iMzQwLTFjN2I3YTBjZDRiOAAAAAABlS7hEeiwAHd5G8hR_Ta7ETnLXPiwdowXKgZ1fkaVmbP1UdByHA);
   background-blend-mode: darken;
 }
@@ -69,3 +67,8 @@ body{
     display: initial;
 
   }
+
+
+
+
+
