@@ -1,0 +1,100 @@
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    color: white;
+    font-family: sans-serif;
+}
+
+.left-section, .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Name {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.navbar ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.navbar li:hover > ul {
+    display: flex;
+}
+
+.logout-button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.logout-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.search-box {
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
