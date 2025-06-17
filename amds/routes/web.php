@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\MyListingsController;
+use App\Http\Controllers\ProfileController;
 
 // Homepage
 Route::get('/', [CarController::class, 'home'])->name('home');
@@ -26,31 +26,16 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
 
     // Dashboard redirect
-    Route::get('/dashboard', function () {
-        return redirect()->route('home');
-    })->name('dashboard');
+    Route::get('/dashboard', fn () => redirect()->route('home'))->name('dashboard');
 
-    // Profile view (fixed: pass $user)
-    Route::get('/profile', function () {
-        return view('profile', ['user' => auth()->user()]);
-    })->name('profile');
-
-    // Profile update
-    Route::put('/profile', function (Request $request) {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email'
-        ]);
-
-        $user = auth()->user();
-        $user->update($request->only('name', 'email'));
-
-        return redirect()->route('profile')->with('success', 'Profils atjaunināts!');
-    })->name('profile.update');
+    // Profile routes
+   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // My listings
     Route::get('/my-listings', [MyListingsController::class, 'index'])->name('my.listings');
 });
 
-// Laravel Breeze (or Jetstream) Auth routes
+// Laravel Breeze Auth routes
 require __DIR__.'/auth.php';

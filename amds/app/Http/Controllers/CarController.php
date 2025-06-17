@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Car;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests; // ✅ Import trait
 
 class CarController extends Controller
 {
+    use AuthorizesRequests; // ✅ Include the trait
+
     public function home()
     {
         $cars = Car::latest()->take(4)->get();
@@ -36,7 +39,7 @@ class CarController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -52,18 +55,19 @@ class CarController extends Controller
 
     public function edit(Car $car)
     {
-        $this->authorize('update', $car);
+        $this->authorize('update', $car); // ✅ Authorization check
+
         return view('cars.edit', compact('car'));
     }
 
     public function update(Request $request, Car $car)
     {
-        $this->authorize('update', $car);
+        $this->authorize('update', $car); // ✅ Authorization check
 
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -80,7 +84,7 @@ class CarController extends Controller
 
     public function destroy(Car $car)
     {
-        $this->authorize('delete', $car);
+        $this->authorize('delete', $car); // ✅ Authorization check
 
         if ($car->image) {
             Storage::disk('public')->delete($car->image);
